@@ -1,0 +1,229 @@
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" ORDER BY "suppliers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSupplier Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "suppliers"[0m
+[ActiveJob] [FulfillOrdersJob] [eef49bd6-90f7-4973-b249-45e5ac92e546] Performing FulfillOrdersJob (Job ID: eef49bd6-90f7-4973-b249-45e5ac92e546) from Async(default) enqueued at 
+[ActiveJob] [FulfillOrdersJob] [eef49bd6-90f7-4973-b249-45e5ac92e546]   [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."name" = ? LIMIT ?[0m  [["name", "supplier_foo"], ["LIMIT", 1]]
+[ActiveJob] [FulfillOrdersJob] [eef49bd6-90f7-4973-b249-45e5ac92e546] Error performing FulfillOrdersJob (Job ID: eef49bd6-90f7-4973-b249-45e5ac92e546) from Async(default) in 17.26ms: ActiveRecord::RecordNotFound (Couldn't find Supplier with [WHERE "suppliers"."name" = ?]):
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activerecord-7.0.6/lib/active_record/relation/finder_methods.rb:378:in `raise_record_not_found_exception!'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activerecord-7.0.6/lib/active_record/core.rb:330:in `find_by!'
+/Users/joachimbourquardez/code/jojojomarseille/code/cr-challenge-jbo/app/jobs/fulfill_orders_job.rb:7:in `perform'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:65:in `block in _perform_job'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/i18n-1.14.1/lib/i18n.rb:317:in `with_locale'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:64:in `_perform_job'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:52:in `perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/notifications.rb:206:in `instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:35:in `instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:14:in `perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/tagged_logging.rb:37:in `tagged'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/tagged_logging.rb:99:in `tagged'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/logging.rb:18:in `perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:24:in `perform_now'
+(irb):1:in `<main>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/workspace.rb:116:in `eval'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/workspace.rb:116:in `evaluate'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/context.rb:450:in `evaluate'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:567:in `block (2 levels) in eval_input'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:751:in `signal_status'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:548:in `block in eval_input'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:251:in `block (2 levels) in each_top_level_statement'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:233:in `loop'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:233:in `block in each_top_level_statement'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:232:in `catch'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:232:in `each_top_level_statement'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:547:in `eval_input'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:481:in `block in run'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:480:in `catch'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:480:in `run'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:409:in `start'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands/console/console_command.rb:74:in `start'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands/console/console_command.rb:19:in `start'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands/console/console_command.rb:106:in `perform'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/thor-1.2.2/lib/thor/command.rb:27:in `run'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/thor-1.2.2/lib/thor/invocation.rb:127:in `invoke_command'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/thor-1.2.2/lib/thor.rb:392:in `dispatch'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/command/base.rb:87:in `perform'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/command.rb:48:in `invoke'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands.rb:18:in `<main>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/bootsnap-1.16.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/bootsnap-1.16.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/zeitwerk-2.6.8/lib/zeitwerk/kernel.rb:38:in `require'
+/Users/joachimbourquardez/code/jojojomarseille/code/cr-challenge-jbo/bin/rails:5:in `<main>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/fork_tracker.rb:20:in `block in fork'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/fork_tracker.rb:18:in `fork'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/fork_tracker.rb:18:in `fork'
+<internal:/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require'
+<internal:/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require'
+-e:1:in `<main>'
+[ActiveJob] [FulfillOrdersJob] [541ae696-bad3-4695-b345-6d0d6f8b77e1] Performing FulfillOrdersJob (Job ID: 541ae696-bad3-4695-b345-6d0d6f8b77e1) from Async(default) enqueued at 
+[ActiveJob] [FulfillOrdersJob] [541ae696-bad3-4695-b345-6d0d6f8b77e1]   [1m[36mSupplier Load (0.4ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."name" = ? LIMIT ?[0m  [["name", "supplier_foo"], ["LIMIT", 1]]
+[ActiveJob] [FulfillOrdersJob] [541ae696-bad3-4695-b345-6d0d6f8b77e1] Error performing FulfillOrdersJob (Job ID: 541ae696-bad3-4695-b345-6d0d6f8b77e1) from Async(default) in 27.32ms: ActiveRecord::RecordNotFound (Couldn't find Supplier with [WHERE "suppliers"."name" = ?]):
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activerecord-7.0.6/lib/active_record/relation/finder_methods.rb:378:in `raise_record_not_found_exception!'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activerecord-7.0.6/lib/active_record/core.rb:330:in `find_by!'
+/Users/joachimbourquardez/code/jojojomarseille/code/cr-challenge-jbo/app/jobs/fulfill_orders_job.rb:7:in `perform'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:65:in `block in _perform_job'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/i18n-1.14.1/lib/i18n.rb:317:in `with_locale'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/core_ext/time/zones.rb:65:in `use_zone'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:64:in `_perform_job'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:52:in `perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/notifications.rb:206:in `instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:35:in `instrument'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/instrumentation.rb:14:in `perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/tagged_logging.rb:37:in `tagged'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/tagged_logging.rb:99:in `tagged'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/logging.rb:18:in `perform_now'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activejob-7.0.6/lib/active_job/execution.rb:24:in `perform_now'
+(irb):1:in `<main>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/workspace.rb:116:in `eval'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/workspace.rb:116:in `evaluate'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/context.rb:450:in `evaluate'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:567:in `block (2 levels) in eval_input'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:751:in `signal_status'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:548:in `block in eval_input'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:251:in `block (2 levels) in each_top_level_statement'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:233:in `loop'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:233:in `block in each_top_level_statement'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:232:in `catch'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb/ruby-lex.rb:232:in `each_top_level_statement'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:547:in `eval_input'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:481:in `block in run'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:480:in `catch'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:480:in `run'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/irb.rb:409:in `start'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands/console/console_command.rb:74:in `start'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands/console/console_command.rb:19:in `start'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands/console/console_command.rb:106:in `perform'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/thor-1.2.2/lib/thor/command.rb:27:in `run'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/thor-1.2.2/lib/thor/invocation.rb:127:in `invoke_command'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/thor-1.2.2/lib/thor.rb:392:in `dispatch'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/command/base.rb:87:in `perform'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/command.rb:48:in `invoke'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.6/lib/rails/commands.rb:18:in `<main>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/bootsnap-1.16.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/bootsnap-1.16.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/zeitwerk-2.6.8/lib/zeitwerk/kernel.rb:38:in `require'
+/Users/joachimbourquardez/code/jojojomarseille/code/cr-challenge-jbo/bin/rails:5:in `<main>'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/fork_tracker.rb:20:in `block in fork'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/fork_tracker.rb:18:in `fork'
+/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/activesupport-7.0.6/lib/active_support/fork_tracker.rb:18:in `fork'
+<internal:/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require'
+<internal:/Users/joachimbourquardez/.rbenv/versions/3.0.3/lib/ruby/3.0.0/rubygems/core_ext/kernel_require.rb>:85:in `require'
+-e:1:in `<main>'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_name" varchar NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "supplier_id" integer, "supplier_reference" varchar)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_orders_on_supplier_id" ON "orders" ("supplier_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_products_on_name" ON "products" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "suppliers"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "suppliers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_suppliers_on_name" ON "suppliers" ("name")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorders" ("id" integer NOT NULL PRIMARY KEY, "customer_name" varchar NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "supplier_id" integer DEFAULT NULL, "supplier_reference" varchar DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aorders_on_supplier_id" ON "aorders" ("supplier_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aorders_on_product_id" ON "aorders" ("product_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aorders" ("id","customer_name","product_id","created_at","updated_at","supplier_id","supplier_reference")
+                     SELECT "id","customer_name","product_id","created_at","updated_at","supplier_id","supplier_reference" FROM "orders"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer NOT NULL PRIMARY KEY, "customer_name" varchar NOT NULL, "product_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "supplier_id" integer DEFAULT NULL, "supplier_reference" varchar DEFAULT NULL, CONSTRAINT "fk_rails_dfb33b2de0"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_orders_on_supplier_id" ON "orders" ("supplier_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "orders" ("id","customer_name","product_id","created_at","updated_at","supplier_id","supplier_reference")
+                     SELECT "id","customer_name","product_id","created_at","updated_at","supplier_id","supplier_reference" FROM "aorders"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aorders"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210513143700)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210513102325),
+(20210513103623),
+(20210513141644);
+
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-07-11 22:38:07.517458"], ["updated_at", "2023-07-11 22:38:07.517458"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-07-11 22:38:07.520001"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "73144ca8899456c05feb8bd15a007dddd106a8fd"], ["created_at", "2023-07-11 22:38:07.522012"], ["updated_at", "2023-07-11 22:38:07.522012"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."state" = ?[0m  [["state", "pending"]]
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."state" = ? /* loading for inspect */ LIMIT ?[0m  [["state", "pending"], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStateToOrders (20210513172112)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "orders" ADD "state" varchar DEFAULT 'pending'[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210513172112"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."state" = ? /* loading for inspect */ LIMIT ?[0m  [["state", "pending"], ["LIMIT", 11]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."state" = ?[0m  [["state", "pending"]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."state" = ? /* loading for inspect */ LIMIT ?[0m  [["state", "pending"], ["LIMIT", 11]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSupplier Load (0.3ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSupplier Load (0.2ms)[0m  [1m[34mSELECT "suppliers".* FROM "suppliers" WHERE "suppliers"."name" = ? LIMIT ?[0m  [["name", "supplier_bar"], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."state" = ?[0m  [["state", "pending"]]
