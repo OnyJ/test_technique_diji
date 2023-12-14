@@ -5,10 +5,20 @@
 This repository features source code written by individuals.  
 The aim of the exercise is to make as many relevant comments as possible on the established source code, using reviews.
 
-## Setup the app
+## How to use the repo
 
-```bin/setup```
+### Setup the app
 
-## Run the tests
+```shell
+bin/setup
+```
 
-```bin/rails spec```
+### Run the tests
+
+```shell
+bin/rails spec
+```
+
+## Candidate Submission
+
+Reviews from myself cand be found [here](https://github.com/OnyJ/test_technique_diji/commit/26a34a34bc807c6315454d81716ac23c27253e4a?diff=unified)
